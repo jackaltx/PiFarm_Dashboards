@@ -3680,7 +3680,7 @@
           "type": "prometheus",
           "uid": "PBFA97CFB590B2093"
         },
-        "definition": "label_values(node_network_iface_id{device!~'lo'},interface)",
+        "definition": "label_values(node_network_iface_id{device!~'lo'},device)",
         "hide": 0,
         "includeAll": false,
         "label": "NIC",
@@ -3689,7 +3689,7 @@
         "name": "device",
         "options": [],
         "query": {
-          "query": "label_values(node_network_iface_id{device!~'lo'},interface)",
+          "query": "label_values(node_network_iface_id{device!~'lo'},device)",
           "refId": "Prometheus-device-Variable-Query"
         },
         "refresh": 1,
