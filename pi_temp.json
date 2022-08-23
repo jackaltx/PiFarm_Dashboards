@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 6,
+  "id": 4,
   "links": [],
   "liveNow": false,
   "panels": [
@@ -176,7 +176,32 @@
             ]
           }
         },
-        "overrides": []
+        "overrides": [
+          {
+            "__systemRef": "hideSeriesFrom",
+            "matcher": {
+              "id": "byNames",
+              "options": {
+                "mode": "exclude",
+                "names": [
+                  "worker3:9100"
+                ],
+                "prefix": "All except:",
+                "readOnly": true
+              }
+            },
+            "properties": [
+              {
+                "id": "custom.hideFrom",
+                "value": {
+                  "legend": false,
+                  "tooltip": false,
+                  "viz": true
+                }
+              }
+            ]
+          }
+        ]
       },
       "gridPos": {
         "h": 9,
@@ -189,7 +214,7 @@
         "legend": {
           "calcs": [],
           "displayMode": "list",
-          "placement": "bottom",
+          "placement": "right",
           "showLegend": true
         },
         "tooltip": {
@@ -203,17 +228,18 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "editorMode": "builder",
-          "expr": "node_hwmon_temp_celsius",
+          "editorMode": "code",
+          "expr": "max(node_hwmon_temp_celsius{job=\"$job\",sensor=\"temp1\"})  by (instance)",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "Raspberry Pi GPU Temperature",
       "type": "timeseries"
     }
   ],
+  "refresh": false,
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
@@ -248,9 +274,9 @@
       },
       {
         "current": {
-          "selected": false,
-          "text": "192.168.11.10:9100",
-          "value": "192.168.11.10:9100"
+          "selected": true,
+          "text": "worker4:9100",
+          "value": "worker4:9100"
         },
         "datasource": {
           "type": "prometheus",
@@ -276,13 +302,13 @@
     ]
   },
   "time": {
-    "from": "now-6h",
-    "to": "now"
+    "from": "2022-08-23T21:21:27.457Z",
+    "to": "2022-08-23T21:46:34.411Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Raspberry Pi Temperatures",
   "uid": "Ux0DivZ4z",
-  "version": 7,
+  "version": 3,
   "weekStart": ""
 }
