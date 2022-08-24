@@ -114,9 +114,9 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "max(node_hwmon_temp_celsius{job=~\"$job\",instance=~\"$node\",sensor=\"temp0\"})  by (instance)",
-          "instant": true,
+          "instant": false,
           "legendFormat": "__auto",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -233,9 +233,9 @@
           "editorMode": "code",
           "exemplar": false,
           "expr": "max(node_hwmon_temp_celsius{job=\"$job\",instance=~\"$node\",sensor=\"temp1\"})  by (instance)",
-          "instant": true,
+          "instant": false,
           "legendFormat": "__auto",
-          "range": false,
+          "range": true,
           "refId": "A"
         }
       ],
@@ -243,7 +243,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": false,
+  "refresh": "5s",
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
@@ -306,13 +306,13 @@
     ]
   },
   "time": {
-    "from": "now-5m",
-    "to": "now"
+    "from": "2022-08-23T21:21:27.457Z",
+    "to": "2022-08-23T21:46:34.411Z"
   },
   "timepicker": {},
   "timezone": "",
   "title": "Raspberry Pi Temperatures",
   "uid": "Ux0DivZ4z",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }
