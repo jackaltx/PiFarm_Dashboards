@@ -178,32 +178,7 @@
             ]
           }
         },
-        "overrides": [
-          {
-            "__systemRef": "hideSeriesFrom",
-            "matcher": {
-              "id": "byNames",
-              "options": {
-                "mode": "exclude",
-                "names": [
-                  "worker3:9100"
-                ],
-                "prefix": "All except:",
-                "readOnly": true
-              }
-            },
-            "properties": [
-              {
-                "id": "custom.hideFrom",
-                "value": {
-                  "legend": false,
-                  "tooltip": false,
-                  "viz": true
-                }
-              }
-            ]
-          }
-        ]
+        "overrides": []
       },
       "gridPos": {
         "h": 9,
@@ -224,6 +199,7 @@
           "sort": "none"
         }
       },
+      "pluginVersion": "9.1.0",
       "targets": [
         {
           "datasource": {
@@ -232,7 +208,7 @@
           },
           "editorMode": "code",
           "exemplar": false,
-          "expr": "max(node_hwmon_temp_celsius{job=\"$job\",instance=~\"$node\",sensor=\"temp1\"})  by (instance)",
+          "expr": "max(node_hwmon_temp_celsius{job=~\"$job\",instance=~\"$node\",sensor=\"temp1\"})  by (instance)",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -243,7 +219,7 @@
       "type": "timeseries"
     }
   ],
-  "refresh": "5s",
+  "refresh": false,
   "schemaVersion": 37,
   "style": "dark",
   "tags": [],
@@ -313,6 +289,6 @@
   "timezone": "",
   "title": "Raspberry Pi Temperatures",
   "uid": "Ux0DivZ4z",
-  "version": 4,
+  "version": 6,
   "weekStart": ""
 }
