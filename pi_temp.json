@@ -112,9 +112,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "max(node_hwmon_temp_celsius{job=\"$job\",sensor=\"temp0\"})  by (instance)",
+          "exemplar": false,
+          "expr": "max(node_hwmon_temp_celsius{job=~\"$job\",instance=~\"$node\",sensor=\"temp0\"})  by (instance)",
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A"
         }
       ],
@@ -229,9 +231,11 @@
             "uid": "PBFA97CFB590B2093"
           },
           "editorMode": "code",
-          "expr": "max(node_hwmon_temp_celsius{job=\"$job\",sensor=\"temp1\"})  by (instance)",
+          "exemplar": false,
+          "expr": "max(node_hwmon_temp_celsius{job=\"$job\",instance=~\"$node\",sensor=\"temp1\"})  by (instance)",
+          "instant": true,
           "legendFormat": "__auto",
-          "range": true,
+          "range": false,
           "refId": "A"
         }
       ],
@@ -275,8 +279,8 @@
       {
         "current": {
           "selected": true,
-          "text": "worker4:9100",
-          "value": "worker4:9100"
+          "text": "All",
+          "value": "$__all"
         },
         "datasource": {
           "type": "prometheus",
@@ -284,7 +288,7 @@
         },
         "definition": "label_values(node_uname_info{job=\"$job\"}, instance)",
         "hide": 0,
-        "includeAll": false,
+        "includeAll": true,
         "label": "Node:",
         "multi": false,
         "name": "node",
@@ -302,8 +306,8 @@
     ]
   },
   "time": {
-    "from": "2022-08-23T21:21:27.457Z",
-    "to": "2022-08-23T21:46:34.411Z"
+    "from": "now-5m",
+    "to": "now"
   },
   "timepicker": {},
   "timezone": "",
